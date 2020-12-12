@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/code"
+        android:hint="音乐名"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/send_request"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="下载音乐" />
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="刷新" />
+    </LinearLayout>
+    <LinearLayout
+                android:orientation="vertical"
+               android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_weight="2">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="本地音乐文件"
+                     android:id="@+id/textView"
+                    android:textSize="25dp" />
+
+                 <ListView
+                     android:id="@+id/list"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+
+                     android:scrollbars="vertical"
+                     android:divider="@android:color/holo_blue_light"
+                     android:dividerHeight="2dp"
+                     android:drawSelectorOnTop="false"
+                     android:choiceMode="singleChoice"/>
+             </LinearLayout>
+
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:layout_width="fill_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="3">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/nameDisplay"
+                     android:layout_gravity="center_horizontal"
+                     android:textSize="28dp"
+                     android:ellipsize="marquee"
+                     android:marqueeRepeatLimit="marquee_forever"
+                     android:focusable="true"
+                     android:singleLine="true"
+                     android:focusableInTouchMode="true"
+                     android:clickable="true"
+                     android:layout_margin="5dp"/>
+
+                 <RelativeLayout
+                     android:orientation="horizontal"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_horizontal">
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="00:00"
+                         android:id="@+id/currTime"
+                         android:layout_alignParentStart="true"/>
+
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="00:00"
+                         android:id="@+id/totalTime"
+                         android:layout_alignParentEnd="true"/>
+                 </RelativeLayout>
+
+                 <SeekBar
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/seekBar"
+                     android:layout_gravity="center_horizontal"
+                     android:layout_margin="10dp"/>
+
+                 <RelativeLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_horizontal"
+                     android:layout_margin="20dp">
+
+                     <androidx.appcompat.widget.AppCompatImageButton
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/previous"
+                         android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="40dp"
+                         android:src="@drawable/player_previous"
+                        android:onClick="onPreviousClick"
+                         android:background="@android:color/transparent"
+                         android:layout_alignParentTop="true"
+                         android:layout_alignParentStart="true" />
+
+                     <androidx.appcompat.widget.AppCompatImageButton
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/stop"
+                         android:src="@drawable/player_stop"
+                         android:layout_gravity="center_horizontal"
+                         android:onClick="onStopClick"
+                         android:background="@android:color/transparent"
+                         android:layout_alignParentTop="true"
+                         android:layout_centerHorizontal="true"
+                         android:layout_toRightOf="@+id/previous"
+                         android:layout_marginStart="30dp"/>
+
+                     <androidx.appcompat.widget.AppCompatImageButton
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/play"
+                         android:layout_gravity="center_horizontal"
+                         android:src="@drawable/player_play"
+                         android:onClick="onPlayClick"
+                         android:background="@android:color/transparent"
+                         android:layout_alignParentTop="true"
+                         android:layout_toRightOf="@+id/stop"
+                         android:layout_marginStart="30dp"/>
+
+                     <androidx.appcompat.widget.AppCompatImageButton
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center_horizontal"
+                         android:id="@+id/next"
+                         android:src="@drawable/player_next"
+                         android:onClick="onNextClick"
+                         android:background="@android:color/transparent"
+                         android:layout_alignParentTop="true"
+                         android:layout_toRightOf="@+id/play"
+                         android:layout_marginStart="30dp" />
+                 </RelativeLayout>
+             </LinearLayout>
+
+
+</LinearLayout>
